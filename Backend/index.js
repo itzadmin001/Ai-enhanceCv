@@ -25,6 +25,9 @@ app.use(cookieParser())
 app.use("/", ResumeRouter)
 app.use('/user', UserRouter)
 
+app.get("/", (req, res) => {
+    res.send("Okay")
+})
 
 app.use("/me", VerifyUser, (req, res) => {
     res.status(200).json({
@@ -35,6 +38,8 @@ app.use("/me", VerifyUser, (req, res) => {
 
 
 const PORT = process.env.PORT || 3000;
+
+
 
 
 app.listen(PORT, () => {
