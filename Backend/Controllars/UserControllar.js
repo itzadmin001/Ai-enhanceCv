@@ -28,7 +28,11 @@ async function UserRegister(req, res) {
                         password: HashPassword,
                     })
                     const token = GenrateToken(newUser.email, newUser._id)
-                    res.cookie("token", token, { httpOnly: true, secure: true });
+                    res.cookie("token", token, {
+                        httpOnly: true,
+                        secure: true,        // Production me true
+                        sameSite: "none"     // cross-domain ke liye
+                    });
                     res.status(201).json({
                         msg: "Acccount created successfully",
                         user: {
@@ -83,7 +87,11 @@ async function UserLogin(req, res) {
         }
 
         const token = await GenrateToken(FindUser.email, FindUser._id)
-        res.cookie("token", token, { httpOnly: true, secure: true });
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: true,        // Production me true
+            sameSite: "none"     // cross-domain ke liye
+        });
 
         res.status(202).json({
             msg: "Acccount Login successfully",
