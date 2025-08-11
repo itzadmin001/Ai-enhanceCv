@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
     const [Loadingpage, SetLoding] = useState(false)
-    const { ResumeData, SetResumeData, User, notify } = useContext(MainContext)
+    const { ResumeData, SetResumeData, BackendUrl, User, notify } = useContext(MainContext)
     const Navigate = useNavigate()
 
 
@@ -29,7 +29,7 @@ function Home() {
                         <AnimatedResumeSVG />
                     </div>
                 </div>
-                <ResumeUpload SetLoding={SetLoding} SetResumeData={SetResumeData} Navigate={Navigate} User={User} notify={notify} />
+                <ResumeUpload SetLoding={SetLoding} SetResumeData={SetResumeData} Navigate={Navigate} User={User} notify={notify} BackendUrl={BackendUrl} />
                 <AboutSection />
             </div>
         </div>
@@ -57,7 +57,7 @@ const AnimatedResumeSVG = () => (
 
 
 
-const ResumeUpload = ({ SetLoding, SetResumeData, Navigate, User, notify }) => {
+const ResumeUpload = ({ SetLoding, SetResumeData, Navigate, User, BackendUrl, notify }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [analyzeButton, SetanalyzeButton] = useState(false)
     const fileInputRef = useRef();
@@ -78,7 +78,7 @@ const ResumeUpload = ({ SetLoding, SetResumeData, Navigate, User, notify }) => {
         if (selectedFile) {
             const formData = new FormData();
             formData.append("file", selectedFile);
-            axios.post('http://localhost:3000/resume', formData, {
+            axios.post(BackendUrl + '/resume', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
 

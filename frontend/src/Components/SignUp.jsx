@@ -8,7 +8,7 @@ function SignUp() {
     const [form, setForm] = useState({ email: '', username: '', password: '', confirmPassword: '' });
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
-    const { User, SetUser, notify } = useContext(MainContext)
+    const { User, SetUser, notify, BackendUrl } = useContext(MainContext)
     const Navigate = useNavigate()
 
 
@@ -37,7 +37,7 @@ function SignUp() {
         if (form.password !== form.confirmPassword) {
             alert("Password not be match")
         } else {
-            axios.post("http://localhost:3000/user/register", form, {
+            axios.post(BackendUrl + "/user/register", form, {
                 withCredentials: true
             })
                 .then((success) => {
