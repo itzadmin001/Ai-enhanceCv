@@ -27,7 +27,7 @@ function Header() {
 
 
     return (
-        <div className="w-full p-4 bg-gray-900/50 fixed  top-0  text-white flex items-center justify-between">
+        <div className="w-full p-4 bg-gray-900/50 fixed  top-0  text-white flex items-center justify-between z-20">
             <h1 className=" font-bold text-2xl cursor-pointer">
                 Enhance cv
             </h1>

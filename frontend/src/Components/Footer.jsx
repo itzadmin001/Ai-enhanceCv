@@ -9,7 +9,7 @@ function Footer() {
     };
 
     return (
-        <footer className="  bg-black  text-white px-6 py-10">
+        <footer className="  bg-black  text-white px-6 py-10"  >
             {/* Top section: Description + Start button */}
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
                 {/* Left: AI Resume Info */}
