@@ -12,11 +12,7 @@ function SignUp() {
     const Navigate = useNavigate()
 
 
-    useEffect(() => {
-        if (User) {
-            Navigate("/")
-        }
-    }, [User])
+
 
 
 
