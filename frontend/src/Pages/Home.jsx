@@ -194,13 +194,6 @@ function EnhancedHome() {
                             ))}
                         </motion.div>
 
-                        <motion.div
-                            variants={floatingVariants}
-                            animate="animate"
-                            className="flex justify-center mt-8"
-                        >
-                            <EnhancedAnimatedResumeSVG />
-                        </motion.div>
                     </motion.div>
 
                     {/* Enhanced Upload Section */}
@@ -256,85 +249,6 @@ function EnhancedHome() {
 }
 
 // Enhanced SVG Animation
-const EnhancedAnimatedResumeSVG = () => (
-    <motion.div
-        whileHover={{ scale: 1.1 }}
-        transition={{ type: "spring", stiffness: 300 }}
-    >
-        <svg width="240" height="160" viewBox="0 0 240 160" fill="none" className="drop-shadow-2xl">
-            <motion.rect
-                x="10"
-                y="10"
-                width="220"
-                height="140"
-                rx="20"
-                fill="url(#resumeGradient)"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8, type: "spring" }}
-            />
-            <motion.rect
-                x="30"
-                y="30"
-                width="180"
-                height="100"
-                rx="10"
-                fill="#ffffff"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-            />
-            <motion.rect
-                x="50"
-                y="50"
-                width="140"
-                height="12"
-                rx="6"
-                fill="#24CFA6"
-                initial={{ width: 0 }}
-                animate={{ width: 140 }}
-                transition={{ delay: 0.6, duration: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
-            />
-            <motion.rect
-                x="50"
-                y="70"
-                width="100"
-                height="10"
-                rx="5"
-                fill="#6366f1"
-                initial={{ width: 0 }}
-                animate={{ width: 100 }}
-                transition={{ delay: 0.8, duration: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
-            />
-            <motion.rect
-                x="50"
-                y="90"
-                width="80"
-                height="10"
-                rx="5"
-                fill="#a5b4fc"
-                initial={{ width: 0 }}
-                animate={{ width: 80 }}
-                transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
-            />
-            <motion.circle
-                cx="190"
-                cy="60"
-                r="8"
-                fill="#24CFA6"
-                initial={{ scale: 0 }}
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ delay: 1.2, duration: 2, repeat: Infinity }}
-            />
-            <defs>
-                <linearGradient id="resumeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#24CFA6" />
-                    <stop offset="100%" stopColor="#6366f1" />
-                </linearGradient>
-            </defs>
-        </svg>
-    </motion.div>
-);
 
 // Enhanced Upload Component
 const ResumeUpload = ({ SetLoding, SetResumeData, Navigate, User, BackendUrl, notify }) => {
