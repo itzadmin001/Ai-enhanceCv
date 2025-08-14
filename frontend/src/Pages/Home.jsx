@@ -69,7 +69,7 @@ function EnhancedHome() {
                 <Silk
                     speed={7}
                     scale={2}
-                    color="#707174"
+                    color="#0F211D"
                     noiseIntensity={1.2}
                     rotation={0}
                 />
